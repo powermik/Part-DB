@@ -1,0 +1,86 @@
+<div style="width: 12cm;">
+<div class="outer">
+    <h2>Detailinfo zu "{TMPL_VAR NAME="name"}"
+        <div style="float: right; display: inline;">
+            ID: {TMPL_VAR NAME="pid"}
+        </div>
+    </h2>
+
+    <div class="inner">
+        <table>
+            <tr valign="top">
+                <td>
+                    <table>
+                       <tr>
+                           <td><b>Name:</b></td>
+                           <td>{TMPL_VAR NAME="name"}</td>
+                       </tr>
+                       <tr>
+                           <td><b>Beschreibung:</b></td>
+                           <td>{TMPL_IF NAME="description"}{TMPL_VAR NAME="description"}{TMPL_ELSE}-{/TMPL_IF}</td>
+                       </tr>
+                       <tr>
+                           <td><b>Vorhanden:</b></td>
+                           <td>{TMPL_VAR NAME="instock"}</td>
+                       </tr>
+                       <tr>
+                           <td><b>Min. Bestand:</b></td>
+                           <td>{TMPL_VAR NAME="mininstock"}</td>
+                       </tr>
+                       <tr>
+                           <td><b>Kategorie:</b></td>
+                           <td>{TMPL_VAR NAME="category_full_path" ESCAPE="none"}</td>
+                       </tr>
+                       <tr>
+                           <td><b>Lagerort:</b></td>
+                           <td>{TMPL_VAR NAME="storelocation_full_path"}{TMPL_IF NAME="storelocation_is_full"} [voll]{/TMPL_IF}</td>
+                       </tr>
+                       {TMPL_UNLESS NAME="disable_manufacturers"}
+                           <tr>
+                               <td><b>Hersteller:</b></td>
+                               <td>{TMPL_VAR NAME="manufacturer_full_path" ESCAPE="none"}</td>
+                           </tr>
+                       {/TMPL_UNLESS}
+                       {TMPL_UNLESS NAME="disable_footprints"}
+                           <tr>
+                               <td><b>Footprint:</b></td>
+                               <td>
+                                   {TMPL_VAR NAME="footprint_full_path"}<br>
+                                   {TMPL_IF NAME="footprint_filename"}<img align="middle" src="{TMPL_VAR NAME="footprint_filename"}" alt="" height="70">{/TMPL_IF}
+                               </td>
+                           </tr>
+                       {/TMPL_UNLESS}
+<!--                   <tr>
+TODO:                      <td><b>Öffentlich sichtbar:</b></td>
+remove this                <td>{TMPL_IF NAME="visible"}ja{TMPL_ELSE}nein{/TMPL_IF}</td>
+                       </tr>
+--!>                   <tr>
+                           <td valign="top"><b>Kommentar:</b></td>
+                           <td>{TMPL_IF NAME="comment"}{TMPL_VAR NAME="comment" ESCAPE="none"}{TMPL_ELSE}-{/TMPL_IF}</td>
+                       </tr>
+                    </table>
+
+                </td>
+
+		<td>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</td>
+                <td>
+			 <div id="qrcode"></div>
+                        <script type="text/javascript">
+                        new QRCode(document.getElementById("qrcode"), {
+                         text: "{TMPL_VAR NAME="partdetailurl"}",
+                         correctLevel : QRCode.CorrectLevel.H,
+                         width: 96,
+                         height: 96
+                        });
+                        </script>
+                </td>
+
+                <td>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
