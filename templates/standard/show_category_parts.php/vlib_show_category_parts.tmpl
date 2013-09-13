@@ -23,9 +23,16 @@
             <input type="hidden" name="cid" value="{TMPL_VAR NAME="cid"}">
             <input type="hidden" name="subcat" value="{TMPL_IF NAME="with_subcategories"}1{TMPL_ELSE}0{/TMPL_IF}">
             <input type="hidden" name="table_rowcount" value="{TMPL_VAR NAME="table_rowcount"}">
-            <table>
+            <table id="categorypartstable" class="tablesorter">
                 {TMPL_INCLUDE FILE="../vlib_table.tmpl"}
             </table>
         </form>
     </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function() 
+    { 
+        $("#categorypartstable").tablesorter(); 
+    } 
+); 
+</script>

@@ -15,62 +15,65 @@
 
 {TMPL_LOOP NAME="table"}
     {TMPL_IF NAME="print_header"}
+	<thead>
         <tr class="trcat">
             {TMPL_LOOP NAME="columns"}
-                {TMPL_IF NAME="caption" VALUE="row"}<td>Nr.</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="hover_picture"}<td></td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="id"}<td class="idclass">ID</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="row_index"}<td class="idclass">Nr.</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="name"}<td>Name</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="name_edit"}<td>Name</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="description"}<td>Beschreibung</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="description_edit"}<td>Beschreibung</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="comment"}<td>Kommentar</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="comment_edit"}<td>Kommentar</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="name_description"}<td>Name / Beschreibung</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="instock"}<td>Bestand</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="instock_edit"}<td>Bestand</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="instock_edit_buttons"}<td>Bestand ändern</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="order_quantity_edit"}<td>Bestell-<br>menge</td>{/TMPL_IF} {TMPL_COMMENT}  only for order parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="mininstock"}<td>Mindest-<br>bestand</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="mininstock_edit"}<td>Mindest-<br>bestand</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="instock_mininstock"}<td>Vorh./<br>Min.Best</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="category"}<td>Kategorie</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="category_edit"}<td>Kategorie</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="row"}<th>Nr.</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="hover_picture"}<th></th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="id"}<th class="idclass">ID</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="row_index"}<th class="idclass">Nr.</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="name"}<th>Name</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="name_edit"}<th>Name</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="description"}<th>Beschreibung</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="description_edit"}<th>Beschreibung</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="comment"}<th>Kommentar</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="comment_edit"}<th>Kommentar</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="name_description"}<th>Name / Beschreibung</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="instock"}<th>Bestand</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="instock_edit"}<th>Bestand</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="instock_edit_buttons"}<th>Bestand ändern</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="order_quantity_edit"}<th>Bestell-<br>menge</th>{/TMPL_IF} {TMPL_COMMENT}  only for order parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="mininstock"}<th>Mindest-<br>bestand</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="mininstock_edit"}<th>Mindest-<br>bestand</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="instock_mininstock"}<th>Vorh./<br>Min.Best</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="category"}<th>Kategorie</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="category_edit"}<th>Kategorie</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
                 {TMPL_UNLESS NAME="disable_footprints"}
-                    {TMPL_IF NAME="caption" VALUE="footprint"}<td>Footprint</td>{/TMPL_IF}
-                    {TMPL_IF NAME="caption" VALUE="footprint_edit"}<td>Footprint</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                    {TMPL_IF NAME="caption" VALUE="footprint"}<th>Footprint</th>{/TMPL_IF}
+                    {TMPL_IF NAME="caption" VALUE="footprint_edit"}<th>Footprint</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
                 {/TMPL_UNLESS}
                 {TMPL_UNLESS NAME="disable_manufacturers"}
-                    {TMPL_IF NAME="caption" VALUE="manufacturer"}<td>Hersteller</td>{/TMPL_IF}
-                    {TMPL_IF NAME="caption" VALUE="manufacturer_edit"}<td>Hersteller</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                    {TMPL_IF NAME="caption" VALUE="manufacturer"}<th>Hersteller</th>{/TMPL_IF}
+                    {TMPL_IF NAME="caption" VALUE="manufacturer_edit"}<th>Hersteller</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
                 {/TMPL_UNLESS}
-                {TMPL_IF NAME="caption" VALUE="storelocation"}<td>Lagerort</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="storelocation_edit"}<td>Lagerort</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="suppliers"}<td>Lieferanten</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="supplier_edit"}<td>Lieferant</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="suppliers_radiobuttons"}<td>Lieferanten</td>{/TMPL_IF} {TMPL_COMMENT}  only for order parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="datasheets"}{TMPL_UNLESS NAME="disable_auto_datasheets"}<td>Datenblätter</td>{/TMPL_UNLESS}{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="button_decrement"}<td align="center">-</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="button_increment"}<td align="center">+</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="order_options"}<td>Optionen</td>{/TMPL_IF} {TMPL_COMMENT}  only for order parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="quantity_edit"}<td>Anzahl</td>{/TMPL_IF} {TMPL_COMMENT}  only for device parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="mountnames_edit"}<td>Bestückungs-<br>daten</td>{/TMPL_IF} {TMPL_COMMENT}  only for device parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="price_edit"}<td>Preis</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="average_single_price"}<td>Einzel-<br>preis Ø</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="single_prices"}<td>Einzel-<br>preise</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="total_prices"}<td>Gesamt-<br>preise</td>{/TMPL_IF} {TMPL_COMMENT}  only for device parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="supplier_partnrs"}<td>Bestell-<br>nummern</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="supplier_partnr_edit"}<td>Bestell-<br>nummer</td>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
-                {TMPL_IF NAME="caption" VALUE="attachements"}<td>Dateianhänge</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="systemupdate_from_version"}<td>Von Version</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="systemupdate_to_version"}<td>Auf Version</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="systemupdate_release_date"}<td>Veröffentlichung</td>{/TMPL_IF}
-                {TMPL_IF NAME="caption" VALUE="systemupdate_changelog"}<td>Changelog</td>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="storelocation"}<th>Lagerort</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="storelocation_edit"}<th>Lagerort</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="suppliers"}<th>Lieferanten</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="supplier_edit"}<th>Lieferant</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="suppliers_radiobuttons"}<th>Lieferanten</th>{/TMPL_IF} {TMPL_COMMENT}  only for order parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="datasheets"}{TMPL_UNLESS NAME="disable_auto_datasheets"}<th>Datenblätter</th>{/TMPL_UNLESS}{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="button_decrement"}<th align="center">-</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="button_increment"}<th align="center">+</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="order_options"}<th>Optionen</th>{/TMPL_IF} {TMPL_COMMENT}  only for order parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="quantity_edit"}<th>Anzahl</th>{/TMPL_IF} {TMPL_COMMENT}  only for device parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="mountnames_edit"}<th>Bestückungs-<br>daten</th>{/TMPL_IF} {TMPL_COMMENT}  only for device parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="price_edit"}<th>Preis</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="average_single_price"}<th>Einzel-<br>preis Ø</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="single_prices"}<th>Einzel-<br>preise</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="total_prices"}<th>Gesamt-<br>preise</th>{/TMPL_IF} {TMPL_COMMENT}  only for device parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="supplier_partnrs"}<th>Bestell-<br>nummern</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="supplier_partnr_edit"}<th>Bestell-<br>nummer</th>{/TMPL_IF} {TMPL_COMMENT}  only for import parts  {/TMPL_COMMENT}
+                {TMPL_IF NAME="caption" VALUE="attachements"}<th>Dateianhänge</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="systemupdate_from_version"}<th>Von Version</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="systemupdate_to_version"}<th>Auf Version</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="systemupdate_release_date"}<th>Veröffentlichung</th>{/TMPL_IF}
+                {TMPL_IF NAME="caption" VALUE="systemupdate_changelog"}<th>Changelog</th>{/TMPL_IF}
             {/TMPL_LOOP}
         </tr>
+	</thead>
+	<tbody>
     {TMPL_ELSE}
-        <input type="hidden" name="id_{TMPL_VAR NAME="row_index"}" value="{TMPL_VAR NAME="id"}">
+        <input type="hidden" name="id_{TMPL_VAR NAME="row_index"}" value="{TMPL_VAR NAME="id"}"> 
         {TMPL_COMMENT} the alternating background colors are created here {/TMPL_COMMENT}
         <tr class="{TMPL_IF NAME="row_odd"}trlist_odd{TMPL_ELSE}trlist_even{/TMPL_IF}">
         {TMPL_LOOP NAME="row_fields"}
@@ -80,7 +83,7 @@
             {/TMPL_IF}
             {TMPL_IF NAME="caption" VALUE="hover_picture"}
                 {TMPL_COMMENT} Pictures {/TMPL_COMMENT}
-                <td class="tdrow0">
+		 <td class="tdrow0">
                     {TMPL_IF NAME="hover_picture"}
                         <a href="javascript:popUp('{TMPL_VAR NAME="hover_picture"}',
                                                     {TMPL_IF NAME="use_modal_popup"}true {TMPL_ELSE}false {/TMPL_IF},
@@ -367,3 +370,4 @@
         </tr>
     {/TMPL_IF}
 {/TMPL_LOOP}
+	</tbody>
