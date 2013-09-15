@@ -181,6 +181,8 @@
     *********************************************************************************/
 
     $html->use_javascript(array('popup'));
+    $html->use_javascript(array('jquery-1.10.2.min'));
+    $html->use_javascript(array('jquery.tablesorter.min'));
 
     $html->set_variable('with_subcategories', $with_subcategories, 'boolean');
 

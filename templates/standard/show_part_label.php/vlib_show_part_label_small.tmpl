@@ -1,9 +1,9 @@
-<div style="width: 8cm;">
+<div style="width: 62mm;">
 <div class="outer">
            <table>
                   <tr>
                       <td>
-		      <ul>
+		      <ul style="list-style-type:none">
 		      <li> {TMPL_VAR NAME="name"}
                       <li> {TMPL_IF NAME="description"}{TMPL_VAR NAME="description"}{TMPL_ELSE}-{/TMPL_IF}
                       <li> &gt;{TMPL_VAR NAME="mininstock"}
@@ -17,7 +17,7 @@
 			<script type="text/javascript">
 			new QRCode(document.getElementById("qrcode"), {
 			 text: "{TMPL_VAR NAME="partdetailurl"}",
-        		 correctLevel : QRCode.CorrectLevel.H,
+        		 correctLevel : QRCode.CorrectLevel.L,
         		 width: 96,
         		 height: 96 
 			});

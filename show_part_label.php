@@ -105,7 +105,7 @@
             $html->set_variable('category_full_path',       (is_object($category) ? $category->get_full_path() : '-'), 'string');
             $html->set_variable('auto_order_exists',        ($part->get_instock() < $part->get_mininstock()), 'boolean');
             $html->set_variable('manual_order_exists',      ($part->get_manual_order() && ($part->get_instock() >= $part->get_mininstock())), 'boolean');
-            $html->set_variable('partdetailurl',            dirname($_SERVER["SCRIPT_URI"]).'/show_part_detail.php?pid='.$part->get_id());
+            $html->set_variable('partdetailurl',            dirname($_SERVER["SCRIPT_URI"]).'/id/1'.$part->get_id());
 
         }
         catch (Exception $e)

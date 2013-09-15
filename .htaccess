@@ -9,3 +9,10 @@ php_value memory_limit 512M
 
 AddDefaultCharset utf-8
 Options -Indexes
+
+RewriteEngine On
+
+#no idea how to set this dynamic
+RewriteBase /partdb/Part-DB
+RewriteRule ^id/1(.*)$ show_part_info.php?pid=$1 [R]
+RewriteRule ^id/2(.*)$ show_device_parts.php?device_id=$1 [R]

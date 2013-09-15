@@ -182,6 +182,32 @@ a.headline:after {content:" -"}
     height: 15px;
 }
 
+#links a img {
+    height: 0;
+    width: 0;
+    border-width: 0;
+    display:none;
+    visibility:hidden;
+  } 
+
+#links a {
+    display:block;
+    padding-top: 110px;
+  } 
+
+
+#links a:hover img {
+    position: relative;
+    top: -260px;
+    left: -90px;
+    height: 240px;
+    width: 320px;
+    border-width: 2px;
+    border-color: #0ff;
+  } 
+
+
+
 /* hover stuff */
 
 .companypic
